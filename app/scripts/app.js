@@ -10,7 +10,12 @@
  */
 
 
-angular.module('AppTest', ['ionic', 'ngCordova', 'ngResource'])
+angular
+  .module('AppTest', [
+    'ionic',
+    'ngCordova',
+    'ngResource'
+  ])
 
   .run(function($ionicPlatform) {
 
@@ -34,30 +39,40 @@ angular.module('AppTest', ['ionic', 'ngCordova', 'ngResource'])
         templateUrl: 'templates/main.html',
         controller: 'MainController'
       })
-      .state('app.home', {
-        url: '/home',
+      .state('app.about', {
+        url: '/about',
         cache: true,
         views: {
-          'viewContent': {
-            templateUrl: 'templates/views/home.html',
+          viewContent: {
+            templateUrl: 'templates/views/about.html',
             controller: 'HomeController'
           }
         }
       })
-      .state('app.settings', {
-        url: '/settings',
+      .state('app.users', {
+        url: '/users',
         cache: true,
         views: {
-          'viewContent': {
-            templateUrl: 'templates/views/settings.html',
-            controller: 'SettingsController'
+          viewContent: {
+            templateUrl: 'templates/views/users.html',
+            controller: 'UsersController'
+          }
+        }
+      })
+      .state('app.user', {
+        url: '/user/:id',
+        cache: true,
+        views: {
+          viewContent: {
+            templateUrl: 'templates/views/user.html',
+            controller: 'UsersController'
           }
         }
       });
 
 
     // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/app/about');
   });
 
 
