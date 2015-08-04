@@ -34,9 +34,9 @@ angular.module('AppTest')
       // var device = $cordovaDevice.getDevice();
 
       $cordovaEmailComposer.isAvailable().then(function() {
-        console.log('is available');
+        console.log('email composer is available');
       }, function () {
-        console.log('not available');
+        console.log('email composer not available');
       });
 
       $scope.email = function(email) {
