@@ -8,7 +8,8 @@
     "angular": "~1.3.17",
     "ngCordova": "~0.1.17-alpha",
     "angular-resource": "~1.3.17",
-    "lodash": "~3.10.0"
+    "lodash": "~3.10.0",
+    "ion-image-lazy-load": "*"
   },
   "resolutions": {
     "angular": "1.3.17"

@@ -7,10 +7,11 @@
     <ion-content>
         <ion-refresher
             pulling-text="Pull to refresh..."
-            on-refresh="fetchRandomText()">
+            on-refresh="fetchRandomText()"
+            spinner="android">
         </ion-refresher>
         <div class="loader" ng-if="!myHTML">
-            <ion-spinner></ion-spinner>
+          <ion-spinner icon="android"></ion-spinner>
         </div>
         <div class="content" ng-bind-html="myHTML">
         </div>

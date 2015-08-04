@@ -1,34 +1,35 @@
-<ion-view>
-    <ion-header-bar align-title="center" class="bar-positive">
+<ion-view view-title="User Data">
+  <ion-header-bar align-title="center" class="bar-positive">
     <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
-        <h1 class="title">User Data</h1>
-    </ion-header-bar>
+    <h1 class="title">User Data</h1>
+  </ion-header-bar>
 
-    <ion-content lazy-scroll>
-        <ion-refresher
-            pulling-text="Pull to refresh..."
-            on-refresh="load()">
-        </ion-refresher>
-        <div class="loader" ng-if="!data">
-            <ion-spinner></ion-spinner>
+  <ion-content lazy-scroll>
+    <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="load()"
+        spinner="android">
+    </ion-refresher>
+    <div class="loader" ng-if="!data">
+        <ion-spinner icon="android"></ion-spinner>
+    </div>
+    <div class="content" ng-if="data">
+      <div>
+        <div class="item item-body">
+          <img image-lazy-src="{{data.picture}}" image-lazy-loader="android">
         </div>
-        <div class="content" ng-if="data">
-          <div>
-            <div class="item item-body">
-              <img ng-src="{{data.picture}}">
-            </div>
-            <div class="item">
-              <h2>{{data.name}}</h2>
-              <p>{{data.email}}</p>
-            </div>
-          </div>
-          <a href="tel:{{data.phone}" class="button button-block button-positive">
-            Ligar
-          </a>
-          <a href="mailto:{{data.email}}" class="button button-block button-positive">
-            Enviar Email
-          </a>
+        <div class="item">
+          <h2>{{data.name}}</h2>
+          <p>{{data.email}}</p>
         </div>
-    </ion-content>
+      </div>
+      <a ng-click="call(data.phone)" class="button button-block button-positive">
+        Ligar
+      </a>
+      <a ng-click="email(data.email)" class="button button-block button-positive">
+        Enviar Email
+      </a>
+    </div>
+  </ion-content>
 
 </ion-view>

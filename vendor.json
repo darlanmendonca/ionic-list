@@ -7,5 +7,6 @@
     "bower_components/ionic/release/js/ionic.js",
     "bower_components/ionic/release/js/ionic-angular.js",
     "bower_components/lodash/lodash.js",
-    "bower_components/ngCordova/dist/ng-cordova.js"
+    "bower_components/ngCordova/dist/ng-cordova.js",
+    "bower_components/ion-image-lazy-load/ionic-image-lazy-load.js"
 ]

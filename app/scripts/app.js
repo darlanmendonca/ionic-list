@@ -14,7 +14,8 @@ angular
   .module('AppTest', [
     'ionic',
     'ngCordova',
-    'ngResource'
+    'ngResource',
+    'ionicLazyLoad'
   ])
 
   .run(function($ionicPlatform) {
@@ -34,23 +35,13 @@ angular
     // Application routing
     $stateProvider
       .state('app', {
-        url: '/app',
+        url: '/',
         abstract: true,
         templateUrl: 'templates/main.html',
         controller: 'MainController'
       })
-      .state('app.about', {
-        url: '/about',
-        cache: true,
-        views: {
-          viewContent: {
-            templateUrl: 'templates/views/about.html',
-            controller: 'HomeController'
-          }
-        }
-      })
       .state('app.users', {
-        url: '/users',
+        url: 'users',
         cache: true,
         views: {
           viewContent: {
@@ -59,11 +50,11 @@ angular
           }
         }
       })
-      .state('app.user', {
-        url: '/user/:id',
+      .state('app.users.get', {
+        url: '/:id',
         cache: true,
         views: {
-          viewContent: {
+          'viewContent@app': {
             templateUrl: 'templates/views/user.html',
             controller: 'UsersController'
           }
@@ -72,7 +63,7 @@ angular
 
 
     // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/app/about');
+    $urlRouterProvider.otherwise('/users');
   });
 
 
