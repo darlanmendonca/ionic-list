@@ -9,10 +9,6 @@
     "ngCordova": "~0.1.18-alpha",
     "angular-resource": "~1.3.17",
     "lodash": "~3.10.0",
-    "ion-image-lazy-load": "*",
-    "ng-cordova-oauth": "~0.1.4"
-  },
-  "resolutions": {
-    "angular": "1.3.17"
+    "ion-image-lazy-load": "*"
   }
 }

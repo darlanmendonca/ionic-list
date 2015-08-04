@@ -7,11 +7,8 @@
  * # UsersController
  */
 angular.module('AppTest')
-  .controller('UsersController', function($scope, UsersService, $stateParams) {
+  .controller('UsersController', function($scope, UsersService, $stateParams, $cordovaDevice, $cordovaEmailComposer) {
 
-    $scope.myHTML = null;
-
-    // just an example...
     $scope.load = function() {
       if (!$stateParams.id) {
         UsersService.list()
@@ -31,6 +28,30 @@ angular.module('AppTest')
     };
 
     $scope.load();
+
+    document.addEventListener('deviceready', function () {
+
+      // var device = $cordovaDevice.getDevice();
+
+      $cordovaEmailComposer.isAvailable().then(function() {
+        console.log('is available');
+      }, function () {
+        console.log('not available');
+      });
+
+      $scope.email = function(email) {
+        var options = {
+          to: email,
+          subject: 'Subject from this email',
+          body: 'How are you?',
+          isHtml: true
+        };
+        $cordovaEmailComposer.open(options).then(null, function () {
+          console.log('user cancelled email');
+        });
+      };
+
+    }, false);
 
 
 

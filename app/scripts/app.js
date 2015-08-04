@@ -1,21 +1,11 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name AppTest
- * @description
- * # Initializes main application and routing
- *
- * Main module of the application.
- */
-
-
 angular
   .module('AppTest', [
     'ionic',
     'ngResource',
     'ionicLazyLoad',
-    // 'ngCordova'
+    'ngCordova'
   ])
 
   .run(function($ionicPlatform) {

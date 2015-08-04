@@ -16,15 +16,15 @@
     <div class="content" ng-if="data">
       <div>
         <div class="item item-body">
-          <img image-lazy-src="{{data.picture}}" image-lazy-loader="none">
+          <img image-lazy-src="{{data.picture}}" image-lazy-loader="android">
         </div>
         <div class="item">
           <h2>{{data.name}}</h2>
           <p>{{data.email}}</p>
         </div>
       </div>
-      <a ng-click="call(data.phone)" class="button button-block button-balanced icon ion-ios-telephone-outline">
-         Ligar
+      <a href="tel:+1-1800-555-5555" class="button button-block button-balanced icon ion-ios-telephone-outline">
+        Ligar
       </a>
       <a ng-click="email(data.email)" class="button button-block button-positive icon ion-ios-email-outline">
         Enviar Email
