@@ -13,9 +13,9 @@
 angular
   .module('AppTest', [
     'ionic',
-    'ngCordova',
     'ngResource',
-    'ionicLazyLoad'
+    'ionicLazyLoad',
+    // 'ngCordova'
   ])
 
   .run(function($ionicPlatform) {
@@ -37,8 +37,7 @@ angular
       .state('app', {
         url: '/',
         abstract: true,
-        templateUrl: 'templates/main.html',
-        controller: 'MainController'
+        templateUrl: 'templates/main.html'
       })
       .state('app.users', {
         url: 'users',
